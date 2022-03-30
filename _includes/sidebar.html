@@ -1,82 +1,49 @@
 <div class="sidebar-item sidebar-header">
-	<div class='sidebar-brand'>
-		<a href="/about/">{{ site.title }}</a>
-	</div>
-	<p class="lead">{{ site.description }}</p>
-	{%- if social.github -%}
-		<a rel="me" href="https://github.com/{{ social.github | cgi_escape | escape }}" title="{{ social.github | escape }}">
-			<svg class="svg-icon grey">
-				<use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}" />
-			</svg></a></li>
-	{%- endif -%}
-</div>
-
-<div class="sidebar-item sidebar-nav">
-	<ul class="nav">
-      <li class="nav-title">Programming-Languages</li>
-	  <li>
-	  	<a class="nav-item" href="/">JAVA</a>
-	  </li>
-	  <li>
-	  	<a class="nav-item" href="/">PYTHON</a>
-	  </li>
-	  <li>
-	  	<a class="nav-item" href="/">TEST</a>
-	  </li>
-	  <!--
-	  {% assign pages_list = site.pages %}
-	  {% for node in pages_list %}
-	    {% if node.title != null %}
-	      {% if node.layout == "page" %}
-	        <li>
-	        	<a class="nav-item" href="{{ node.url }}">
-	            	{{ node.title }}
-	            </a>
-	        </li>
-	      {% endif %}
-	    {% endif %}
-	  {% endfor %}
-	-->
-	</ul>
+    <div class="sidebar-brand">
+        <a href="/">{{ site.title }}</a>
+    </div>
 </div>
 
 
 <div class="sidebar-item sidebar-nav">
-  	<ul class="nav">
-			<li class="nav-title">Algorithms</li>
-			
-			<li>
-	  			<a class="nav-item" href="/">BASIC</a>
-	  		</li>
-	  		<li>
-	  			<a class="nav-item" href="/">ADVANCED</a>
-	  		</li>
-
-	  		<!--
-	    	{% for category in site.categories %}
-	    	<li>
-	    		<a class="nav-item" href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}">
-				<span class="name">{{ category | first }}</span>
-				<span class="badge">{{ category | last | size }}</span>
-	    		</a>
- 			</li>
-	    	{% endfor %}
-	    	-->
-	  </nav>
-	</ul>
+    <ul class="nav">
+        <li class="nav-title">Record</li>
+            <a class="nav-item" href="/category/til">TIL</a>
+            <!-- <ul>
+                {% assign pages_list = site.pages %}
+                {% for node in pages_list %}
+                {% if node.title == "TIL" %}
+                    <a class="category-link"
+                        href="{{ site.baseurl }}{{ node.url }}"
+                        style="color:gray">
+                        {{ node.title }}
+                    </a>
+                {% endif %}
+                {% endfor %}
+            </ul> -->
+    </ul>
 </div>
 
-
-<div class="sidebar-item sidebar-footer">
-	<p><a href="https://github.com/jekyll/jekyll"></a></p>
+<!-- <div class="sidebar-item sidebar-nav">
+    <ul class="nav">
+        <li class="nav-title">Programming-Languages</li>
+        <li>
+            <a class="nav-item" href="/category/python">PYTHON</a>
+        </li>
+        <li>
+            <a class="nav-item" href="/category/java">JAVA</a>
+        </li>
+    </ul>
 </div>
 
-<!-- 
-	{% for category in site.categories %}
-	: for 루프를 돌며 site.categories의 항목들을 category라는 변수에 배치해서 작업한다.
-
-	카테고리명은 {{ category|first }}로 추출
-	카테고리에 포함된 포스트 갯수는 {{ category | last | size }}로 추출
-
-	{%endfor%}
--->
+<div class="sidebar-item sidebar-nav">
+    <ul class="nav">
+        <li class="nav-title">Algorithms</li>
+        <li>
+            <a class="nav-item" href="/category/basic">BASIC</a>
+        </li>
+        <li>
+            <a class="nav-item" href="/category/advanced">ADVANCED</a>
+        </li>
+    </ul>
+</div> -->

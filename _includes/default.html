@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  {%- include head.html -%}
-  <style>@import url(/public/css/syntax/{{ site.highlighter-theme }}.css);</style>
-  <title>{{ site.title }}</title>
-  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+<html lang="en">
+<head>
+    <style>
+    @import url(/public/css/syntax/{{ site.highlighter-theme }}.css);
+    article{
+        margin-top:50px;
+    }
+    </style>
+    <link href="/public/css/style.css" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="/public/css/style.css" rel="stylesheet">
-  <body>
-  	<div class="container"> 
-		<div class="sidebar">
-			{% include sidebar.html %}
-		</div>
-		<div class="content">
-			{{ content }}
-		</div>
-	</div>
-  </body>
+
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            {% include sidebar.html %}
+        </div>
+        <div class="content">
+            {{ content }}
+        </div>
+    </div>
+</body>
 </html>
