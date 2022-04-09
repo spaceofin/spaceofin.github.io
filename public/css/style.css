@@ -86,7 +86,7 @@ code {
 }
 
 .content {
-	/*margin-left: 180px;*/
+	margin-left: 10px;
 	flex: 1 1 auto;
 	padding: 0px 30px;
 }
