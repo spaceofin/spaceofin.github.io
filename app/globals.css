@@ -18,10 +18,54 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background: repeating-linear-gradient(
+      0.25turn,
+      #3f87a6,
+      transparent 0.1%,
+      #3f87a6 0.75%
+    ),
+    repeating-linear-gradient(
+      #0d6a96,
+      #6aa0b8 15%,
+      #9ab6c2 25%,
+      #0d6a96 45%,
+      #4b849c 65%,
+      #9ab6c2 75%,
+      #6aa0b8 90%,
+      #0d6a96 100%
+    );
+  background-size: 100% 200%;
+  animation: paintAnimation 200s infinite linear;
+}
+
+@keyframes paintAnimation {
+  0% {
+    background-position: 0% 0%, 0% 200%;
+  }
+  50% {
+    background-position: 0% 0%, 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.link {
+  @apply p-2 hover:bg-slate-700 hover:rounded-lg hover:text-white;
+}
+
+.page-background {
+  @apply m-20 p-10 bg-white bg-opacity-65 rounded-xl;
+  width: 90%;
+  height: 70%;
 }
