@@ -24,19 +24,18 @@ body {
   padding: 0px;
   background: repeating-linear-gradient(
       0.25turn,
-      #3f87a6,
-      transparent 0.1%,
-      #3f87a6 0.75%
+      #61bdc9,
+      transparent 0.001%,
+      #87cfee 0.65%
     ),
     repeating-linear-gradient(
-      #0d6a96,
-      #6aa0b8 15%,
-      #9ab6c2 25%,
-      #0d6a96 45%,
-      #4b849c 65%,
-      #9ab6c2 75%,
-      #6aa0b8 90%,
-      #0d6a96 100%
+      #2097ce,
+      #88d3dd 15%,
+      #a9d1cf 25%,
+      #2097ce 50%,
+      #a9d1cf 70%,
+      #88d3dd 85%,
+      #2097ce 100%
     );
   background-size: 100% 200%;
   animation: paintAnimation 200s infinite linear;
