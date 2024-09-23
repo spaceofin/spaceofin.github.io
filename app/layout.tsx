@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navigation />
         <div className="flex justify-center w-full h-full">
-          <div className="page-background">{children}</div>
+          <div className="page-background overflow-y-auto">{children}</div>
         </div>
       </body>
     </html>
