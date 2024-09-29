@@ -8,9 +8,11 @@ export default async function TroubleShooting() {
   const postDates = posts.map((post) => post.frontmatter.date);
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-full w-full">
       <DateFilterNav postDates={postDates} />
-      <PostList posts={posts} />
+      <div className="prose max-w-full">
+        <PostList posts={posts} />
+      </div>
     </div>
   );
 }

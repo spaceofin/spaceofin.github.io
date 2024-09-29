@@ -19,7 +19,7 @@ export default function PostList({ posts }: { posts: MDXPost[] }) {
     <div className="flex h-full">
       <div className="flex-col overflow-y-auto">
         {filteredPosts.map((post, index) => (
-          <div key={index} className="flex-grow">
+          <div key={index} className="flex-grow mr-4">
             <div>{post.frontmatter.title}</div>
             <div>{post.frontmatter.date}</div>
             <div>{post.frontmatter.description}</div>
@@ -27,7 +27,7 @@ export default function PostList({ posts }: { posts: MDXPost[] }) {
             <div>{post.content}</div>
             <br />
             <br />
-            <hr />
+            <hr className=" border-blue-800" />
             <br />
           </div>
         ))}
