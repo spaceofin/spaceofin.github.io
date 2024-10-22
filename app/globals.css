@@ -59,12 +59,50 @@ body {
   }
 }
 
-.link {
-  @apply p-2 hover:bg-slate-700 hover:rounded-lg hover:text-white;
-}
+@layer components {
+  .link {
+    @apply p-2 hover:bg-slate-700 hover:rounded-lg hover:text-white;
+  }
 
-.page-background {
-  @apply m-20 mt-5 mb-14 py-10 px-7 min-h-64 bg-white bg-opacity-65 rounded-xl;
-  width: 100%;
-  height: auto;
+  .page-background {
+    @apply m-12 mt-10 mb-10 py-10 px-7 min-h-64 bg-white bg-opacity-65 rounded-xl;
+    width: 100%;
+    height: auto;
+  }
+
+  .prose {
+    max-width: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .prose p {
+    margin: 2px 0px;
+    font-size: 16px;
+  }
+  .prose code {
+    background-color: rgba(246, 196, 178, 0.9);
+    border-radius: 4px;
+    padding: 2px 4px;
+    color: rgb(236, 91, 1);
+  }
+
+  .prose code::before,
+  .prose code::after {
+    content: "";
+  }
+
+  .prose pre {
+    display: flex;
+    line-height: 1.4;
+    margin: 5px 0px;
+    padding: 25px 20px;
+    background-color: rgba(3, 52, 98, 0.75);
+  }
+
+  .prose pre code {
+    background-color: transparent;
+    color: white;
+  }
 }

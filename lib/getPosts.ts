@@ -8,9 +8,6 @@ export async function getPosts({ page }: { page: string }) {
     .from("posts")
     .list(`${page}/md`);
 
-  console.log(fileList);
-  console.log(page);
-
   if (error) {
     console.error("Error occurred while loading the file list:", error.message);
     return [];
