@@ -1,12 +1,15 @@
-import { ReactElement } from "react";
+import { CompileMDXResult } from "next-mdx-remote/rsc";
 
-export type MDXPost = {
-  frontmatter: {
-    title: string;
-    date: string;
-    description: string;
-    tags: string[];
-    category: string;
-  };
-  content: ReactElement;
+export type Frontmatter = {
+  title: string;
+  created_at: string;
+  updated_at: string;
+  tags: string[];
+};
+
+export type MDXPost = CompileMDXResult<Frontmatter>;
+
+export type Post = MDXPost & {
+  preview: string;
+  fileNameWithoutExtension: string;
 };
