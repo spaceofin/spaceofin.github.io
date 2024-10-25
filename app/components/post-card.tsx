@@ -6,7 +6,8 @@ export function PostCard({
   frontmatter,
   preview,
   fileNameWithoutExtension,
-}: PostSummary) {
+  tagsClassName = "",
+}: PostSummary & { tagsClassName?: string }) {
   const pathname = usePathname();
   console.log(pathname);
   return (
@@ -20,7 +21,7 @@ export function PostCard({
         {frontmatter.tags.map((tag, index) => (
           <span
             key={index}
-            className="bg-blue-600 bg-opacity-80 text-white rounded-xl pb-1 px-3 mr-2 my-1 whitespace-nowrap">
+            className={`bg-blue-500 bg-opacity-80 text-white rounded-xl pb-1 px-3 mr-2 my-1 whitespace-nowrap ${tagsClassName}`}>
             {tag}
           </span>
         ))}

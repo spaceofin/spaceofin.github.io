@@ -7,8 +7,10 @@ import dayjs from "dayjs";
 
 export default function PostList({
   postSummaries,
+  tagsClassName = "",
 }: {
   postSummaries: PostSummary[];
+  tagsClassName?: string;
 }) {
   const { selectedDate } = usePostContext();
 
@@ -24,7 +26,11 @@ export default function PostList({
   return (
     <div className="flex flex-col pr-10 overflow-y-auto gap-5">
       {filteredPosts.map((post) => (
-        <PostCard key={post.frontmatter.title} {...post} />
+        <PostCard
+          key={post.frontmatter.title}
+          {...post}
+          tagsClassName={tagsClassName}
+        />
       ))}
     </div>
   );

@@ -30,6 +30,7 @@ export async function getPostSummaries({ page }: { page: string }) {
       .replace(/^#\s+.*$/gm, "")
       .replace(/`/g, "")
       .replace(/!\[\[.*?\.png(\|\d+)?\]\]/g, "")
+      .replace(/#+/g, "")
       .trim()
       .slice(0, 300);
 

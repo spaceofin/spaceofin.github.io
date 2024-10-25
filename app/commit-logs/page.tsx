@@ -13,7 +13,10 @@ export default async function CommitLogs() {
 
   return (
     <div className="flex h-full">
-      <DateFilterNav postDates={postDates} />
+      <DateFilterNav
+        postDates={postDates}
+        className="bg-sky-700 border-cyan-950"
+      />
       <div className="flex overflow-y-auto">
         <PostList postSummaries={postSummaries} />
       </div>
