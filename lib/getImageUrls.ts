@@ -5,7 +5,7 @@ export async function getImageUrls({
   page,
 }: {
   post: string;
-  page: string;
+  page?: string;
 }): Promise<string[]> {
   const { data: imageFileList, error } = await supabase.storage
     .from("posts")

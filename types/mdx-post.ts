@@ -13,3 +13,8 @@ export type Post = MDXPost & {
   preview: string;
   fileNameWithoutExtension: string;
 };
+
+export type PostSummary = Pick<
+  Post,
+  "frontmatter" | "preview" | "fileNameWithoutExtension"
+>;

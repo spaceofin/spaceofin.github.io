@@ -1,19 +1,8 @@
 import { supabase } from "./supabaseClient";
-import { getImageUrls } from "./getImageUrls";
 import { getMetadata } from "./getMetadata";
-import { replaceImageTexts } from "./replaceImageTexts";
+import { Frontmatter } from "@/types/mdx-post";
 
-export async function getPostTitles({ page }: { page: string }) {
-  const { data, error } = await supabase.storage
-    .from("posts")
-    .list(`${page}/md`);
-
-  const fileList = data?.map((file) => file.name.replace(/\.(md|mdx)$/, ""));
-
-  return fileList;
-}
-
-export async function getPosts({ page }: { page: string }) {
+export async function getPostSummaries({ page }: { page: string }) {
   const { data: fileList, error } = await supabase.storage
     .from("posts")
     .list(`${page}/md`);
@@ -23,7 +12,7 @@ export async function getPosts({ page }: { page: string }) {
     return [];
   }
 
-  const posts = [];
+  const postSummaries = [];
 
   for (const file of fileList) {
     const { data, error } = await supabase.storage
@@ -40,27 +29,22 @@ export async function getPosts({ page }: { page: string }) {
       .replace(/---[\s\S]*?---/, "")
       .replace(/^#\s+.*$/gm, "")
       .replace(/`/g, "")
+      .replace(/!\[\[.*?\.png(\|\d+)?\]\]/g, "")
       .trim()
       .slice(0, 300);
 
     const fileNameWithoutExtension = file.name.replace(/\.(md|mdx)$/, "");
 
-    const imageUrls = await getImageUrls({
-      post: fileNameWithoutExtension,
-      page: page,
+    const { frontmatter }: { frontmatter: Frontmatter } = await getMetadata({
+      source: text,
     });
 
-    const result =
-      imageUrls.length > 0 ? replaceImageTexts({ text, imageUrls }) : text;
-
-    const parsedResult = await getMetadata({ source: result });
-
-    posts.push({
-      ...parsedResult,
+    postSummaries.push({
+      frontmatter,
       preview: preview,
       fileNameWithoutExtension: fileNameWithoutExtension,
     });
   }
 
-  return posts;
+  return postSummaries;
 }
