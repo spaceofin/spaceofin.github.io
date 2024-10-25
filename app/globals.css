@@ -65,9 +65,9 @@ body {
   }
 
   .page-background {
-    @apply m-12 mt-10 mb-10 py-10 px-7 min-h-64 bg-white bg-opacity-65 rounded-xl;
-    width: 100%;
-    height: auto;
+    @apply pt-10 pb-20 px-7 min-h-64 bg-white bg-opacity-65 rounded-xl;
+    width: 95%;
+    min-height: 70vh;
   }
 
   .prose {
@@ -99,6 +99,8 @@ body {
     margin: 5px 0px;
     padding: 25px 20px;
     background-color: rgba(3, 52, 98, 0.75);
+    overflow: visible;
+    white-space: pre-wrap;
   }
 
   .prose pre code {

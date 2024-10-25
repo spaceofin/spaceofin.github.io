@@ -12,7 +12,7 @@ export function PostCard({
   return (
     <Link
       href={`${pathname}/${fileNameWithoutExtension}`}
-      className="flex flex-col w-4/5 min-w-96 my-4 border-2 px-10 py-5 border-sky-500 rounded-lg bg-white bg-opacity-50 no-underline">
+      className="flex flex-col w-full min-w-96 px-10 py-5  rounded-lg bg-white bg-opacity-50 no-underline">
       <h3 className="text-lg font-normal my-2 mb-0">{frontmatter.title}</h3>
       <p className="flex justify-end">{frontmatter.created_at}</p>
       <div className="line-clamp-2">{preview}</div>

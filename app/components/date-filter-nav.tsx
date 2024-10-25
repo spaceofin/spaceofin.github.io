@@ -19,7 +19,7 @@ export function DateFilterNav({ postDates }: { postDates: string[] }) {
       <ul>
         <li
           className="flex justify-center bg-indigo-800 bg-opacity-65
-                     text-xl text-white font-mono rounded-md m-2 ml-0 px-6 gap-0.5 border-2 border-indigo-950 hover:cursor-pointer"
+                     text-xl text-white font-mono rounded-md m-2 ml-0 px-6 gap-0.5 border-2 border-indigo-950 border-opacity-70 hover:cursor-pointer"
           onClick={() => {
             setSelectedDate("");
           }}>
@@ -28,7 +28,7 @@ export function DateFilterNav({ postDates }: { postDates: string[] }) {
         {formattedPostDatesList.map((date) => (
           <li
             className="flex justify-center bg-indigo-800 bg-opacity-65
-                     text-xl text-white font-mono rounded-md m-2 ml-0 px-6 gap-0.5 border-2 border-indigo-950 hover:cursor-pointer"
+                     text-xl text-white font-mono rounded-md m-2 ml-0 px-6 gap-0.5 border-2 border-indigo-950 border-opacity-70 hover:cursor-pointer"
             key={date}
             onClick={() => {
               setSelectedDate(date);

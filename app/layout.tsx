@@ -31,8 +31,8 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <Navigation />
-          <div className="flex justify-center w-full h-full">
-            <div className="page-background overflow-hidden">{children}</div>
+          <div className="flex justify-center py-10">
+            <div className="page-background">{children}</div>
           </div>
         </body>
       </PostProvider>

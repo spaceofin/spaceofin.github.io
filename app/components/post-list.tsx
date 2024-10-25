@@ -22,12 +22,8 @@ export default function PostList({
     : postSummaries;
 
   return (
-    <div className="flex-col overflow-y-auto">
-      {filteredPosts.map((post, index) => (
-        // <div key={index} className="flex-grow mr-4">
-        //   <div>{post.content}</div>
-        //   <hr className=" border-blue-800" />
-        // </div>
+    <div className="flex flex-col pr-10 overflow-y-auto gap-5">
+      {filteredPosts.map((post) => (
         <PostCard key={post.frontmatter.title} {...post} />
       ))}
     </div>
