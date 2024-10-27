@@ -65,21 +65,39 @@ body {
   }
 
   .page-background {
-    @apply pt-10 pb-20 px-7 min-h-64 bg-white bg-opacity-65 rounded-xl;
+    @apply pt-10 pb-20 px-7 min-h-64 bg-white bg-opacity-75 rounded-xl;
     width: 95%;
     min-height: 70vh;
   }
 
   .prose {
     max-width: none;
+    font-size: 18px;
   }
 
   .text-balance {
     text-wrap: balance;
   }
   .prose p {
-    margin: 2px 0px;
-    font-size: 16px;
+    margin: 0px;
+  }
+  .prose ul li {
+    margin: 0px;
+    position: relative;
+    padding-left: 1em;
+  }
+  .prose ul li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: black;
+  }
+  .prose ul {
+    margin: 0px;
+    margin-bottom: 2px;
+    list-style-type: none;
+    padding-inline-start: 1em;
+    margin-bottom: 10px;
   }
   .prose code {
     background-color: rgba(246, 196, 178, 0.9);
@@ -96,15 +114,16 @@ body {
   .prose pre {
     display: flex;
     line-height: 1.4;
-    margin: 5px 0px;
+    margin: 10px 0px;
     padding: 25px 20px;
-    background-color: rgba(3, 52, 98, 0.75);
+    background-color: rgba(255, 255, 255, 0.7);
     overflow: visible;
     white-space: pre-wrap;
   }
 
   .prose pre code {
     background-color: transparent;
-    color: white;
+    /* color: rgb(255, 255, 255); */
+    color: black;
   }
 }

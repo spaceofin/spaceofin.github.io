@@ -32,7 +32,7 @@ export async function getPostSummaries({ page }: { page: string }) {
       .replace(/!\[\[.*?\.png(\|\d+)?\]\]/g, "")
       .replace(/#+/g, "")
       .trim()
-      .slice(0, 300);
+      .slice(0, 700);
 
     const fileNameWithoutExtension = file.name.replace(/\.(md|mdx)$/, "");
 
