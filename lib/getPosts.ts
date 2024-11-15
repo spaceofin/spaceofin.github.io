@@ -46,7 +46,6 @@ export async function getPosts({ page }: { page: string }) {
     const fileNameWithoutExtension = file.name.replace(/\.(md|mdx)$/, "");
 
     const imageUrls = await getImageUrls({
-      post: fileNameWithoutExtension,
       page: page,
     });
 

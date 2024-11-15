@@ -25,7 +25,6 @@ export async function loadContent({
 
   const imageUrls = await getImageUrls({
     page: page,
-    post: fileName.replace(/\.(md|mdx)$/, ""),
   });
 
   const result =
