@@ -24,7 +24,7 @@ export default function PostList({
     : postSummaries;
 
   return (
-    <div className="flex flex-col pr-10 overflow-y-auto gap-5">
+    <div className="flex flex-col overflow-y-auto gap-5">
       {filteredPosts.map((post) => (
         <PostCard
           key={post.frontmatter.title}

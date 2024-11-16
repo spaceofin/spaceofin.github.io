@@ -12,7 +12,7 @@ export default async function LearningLogs() {
   );
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-full mr-5">
       <DateFilterNav
         postDates={postDates}
         className="bg-teal-700 border-teal-950"

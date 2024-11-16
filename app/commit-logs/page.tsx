@@ -12,7 +12,7 @@ export default async function CommitLogs() {
   );
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-full mr-5">
       <DateFilterNav
         postDates={postDates}
         className="bg-sky-700 border-cyan-950"

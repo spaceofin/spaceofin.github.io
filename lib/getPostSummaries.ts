@@ -2,6 +2,23 @@ import { supabase } from "./supabaseClient";
 import { getMetadata } from "./getMetadata";
 import { Frontmatter } from "@/types/mdx-post";
 
+export async function getAllPostSummaries() {
+  const [learningLogSummaries, commitLogSummaries] = await Promise.all([
+    getPostSummaries({ page: "learning-logs" }),
+    getPostSummaries({ page: "commit-logs" }),
+  ]);
+
+  const allPostSummaries = [...learningLogSummaries, ...commitLogSummaries];
+
+  const sortedAllPostSummaries = allPostSummaries.sort(
+    (a, b) =>
+      new Date(b.frontmatter.created_at).getTime() -
+      new Date(a.frontmatter.created_at).getTime()
+  );
+
+  return sortedAllPostSummaries;
+}
+
 export async function getPostSummaries({ page }: { page: string }) {
   const { data: fileList, error } = await supabase.storage
     .from("posts")
