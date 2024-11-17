@@ -8,7 +8,16 @@ export async function getAllPostSummaries() {
     getPostSummaries({ page: "commit-logs" }),
   ]);
 
-  const allPostSummaries = [...learningLogSummaries, ...commitLogSummaries];
+  const allPostSummaries = [
+    ...learningLogSummaries.map((summary) => ({
+      ...summary,
+      page: "learning-logs",
+    })),
+    ...commitLogSummaries.map((summary) => ({
+      ...summary,
+      page: "commit-logs",
+    })),
+  ];
 
   const sortedAllPostSummaries = allPostSummaries.sort(
     (a, b) =>

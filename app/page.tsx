@@ -10,7 +10,7 @@ export default async function Home() {
     <>
       <SearchBar />
       <div className="flex jusitfy-center w-full px-4 md:px-7">
-        <PostList postSummaries={allPostSummaries} />
+        <PostList postSummaries={allPostSummaries} tagsClassName="bg-sky-600" />
       </div>
     </>
   );
