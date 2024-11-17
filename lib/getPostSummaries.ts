@@ -73,5 +73,11 @@ export async function getPostSummaries({ page }: { page: string }) {
     });
   }
 
-  return postSummaries;
+  const sortedPostSummaries = postSummaries.sort(
+    (a, b) =>
+      new Date(b.frontmatter.created_at).getTime() -
+      new Date(a.frontmatter.created_at).getTime()
+  );
+
+  return sortedPostSummaries;
 }
