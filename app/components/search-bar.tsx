@@ -3,10 +3,13 @@
 import { MdCancel } from "react-icons/md";
 import { FcSearch } from "react-icons/fc";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export const SearchBar = () => {
   const [inputValue, setInputValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+
+  const router = useRouter();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -14,10 +17,12 @@ export const SearchBar = () => {
 
   const handleCancelClick = () => {
     setInputValue("");
+    router.push("/");
   };
 
   const handleSearchClick = () => {
-    console.log("search");
+    if (inputValue === "") router.push("/");
+    else router.push(`?searchTerm=${inputValue}`);
   };
 
   return (
@@ -35,6 +40,11 @@ export const SearchBar = () => {
               setIsFocused(false);
             }, 100)
           }
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSearchClick();
+            }
+          }}
         />
         <div onClick={handleSearchClick}>
           <FcSearch size={40} className="cursor-pointer" />
