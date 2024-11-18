@@ -2,9 +2,9 @@ import { loadContent } from "@/lib/loadContent";
 import { getPostTitles } from "@/lib/getPosts";
 
 export async function generateStaticParams() {
-  const slugs = await getPostTitles({ page: "commit-logs" });
+  const titles = await getPostTitles({ page: "commit-logs" });
 
-  return slugs?.map((slug) => ({ slug }));
+  return (titles ?? []).map((title) => ({ slug: title }));
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {

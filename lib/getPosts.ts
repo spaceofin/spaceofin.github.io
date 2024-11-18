@@ -8,6 +8,10 @@ export async function getPostTitles({ page }: { page: string }) {
     .from("posts")
     .list(`${page}/md`);
 
+  if (error) {
+    throw new Error(`Error fetching post titles: ${error.message}`);
+  }
+
   const fileList = data?.map((file) => file.name.replace(/\.(md|mdx)$/, ""));
 
   return fileList;

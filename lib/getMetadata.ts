@@ -1,6 +1,6 @@
 import { compileMDX, CompileMDXResult } from "next-mdx-remote/rsc";
 import { Frontmatter } from "@/types/mdx-post";
-import { useMDXComponents } from "@/mdx-components";
+import { getMDXComponents } from "@/mdx-components";
 
 export async function getMetadata({
   source,
@@ -12,6 +12,6 @@ export async function getMetadata({
     options: {
       parseFrontmatter: true,
     },
-    components: useMDXComponents({}),
+    components: getMDXComponents({}),
   });
 }

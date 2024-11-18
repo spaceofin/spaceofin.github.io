@@ -21,6 +21,7 @@ export default function FilteredPostList({
         (acc, tag) => acc.concat(tag.split("_").map((t) => t.toLowerCase())),
         []
       );
+
       return (
         postSummary.frontmatter.title.toLowerCase().includes(searchTerm) ||
         splitTags.some((tag) => searchTerm.includes(tag))
