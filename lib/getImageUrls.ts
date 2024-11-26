@@ -4,17 +4,17 @@ export async function getImageUrls({
   page,
 }: {
   page?: string;
-}): Promise<string[]> {
+}): Promise<{ [key: string]: string }> {
   const { data: imageFileList, error } = await supabase.storage
     .from("posts")
     .list(`${page}/images`);
 
   if (error) {
     console.error("Error occurred while loading the file list:", error.message);
-    return [];
+    return {};
   }
 
-  const imageFileUrls = [];
+  const imageFileUrls: { [key: string]: string } = {};
 
   for (const imageFile of imageFileList) {
     // console.log(imageFile);
@@ -23,11 +23,10 @@ export async function getImageUrls({
       .getPublicUrl(`${page}/images/${imageFile.name}`);
     if (error) {
       console.error(error);
-      return [];
+      return {};
     }
-    imageFileUrls.push(data.publicUrl);
+    imageFileUrls[imageFile.name] = data.publicUrl;
   }
 
-  // console.log(imageFileUrls);
   return imageFileUrls;
 }

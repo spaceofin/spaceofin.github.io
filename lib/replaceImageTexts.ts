@@ -1,15 +1,15 @@
 export function replaceImageTexts({
   text,
-  imageUrls,
+  imageUrlsObj,
 }: {
   text: string;
-  imageUrls: string[];
+  imageUrlsObj: { [key: string]: string };
 }): string {
-  let imageIndex = 0;
+  return text.replace(/!\[\[(.*?\.png)(\|\d+)?\]\]/g, (match, p1) => {
+    const replacement = imageUrlsObj[p1]
+      ? `![](${imageUrlsObj[p1]})`
+      : "[not found image]";
 
-  return text.replace(/!\[\[.*?\.png(\|\d+)?\]\]/g, () => {
-    const replacement = `![](${imageUrls[imageIndex]})` || "";
-    imageIndex += 1;
     return replacement;
   });
 }

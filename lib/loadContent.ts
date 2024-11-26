@@ -23,12 +23,14 @@ export async function loadContent({
 
   const text = await data.text();
 
-  const imageUrls = await getImageUrls({
+  const imageUrlsObj = await getImageUrls({
     page: page,
   });
 
   const result =
-    imageUrls.length > 0 ? replaceImageTexts({ text, imageUrls }) : text;
+    Object.keys(imageUrlsObj).length > 0
+      ? replaceImageTexts({ text, imageUrlsObj })
+      : text;
 
   const parsedResult = await getMetadata({ source: result });
 

@@ -49,12 +49,14 @@ export async function getPosts({ page }: { page: string }) {
 
     const fileNameWithoutExtension = file.name.replace(/\.(md|mdx)$/, "");
 
-    const imageUrls = await getImageUrls({
+    const imageUrlsObj = await getImageUrls({
       page: page,
     });
 
     const result =
-      imageUrls.length > 0 ? replaceImageTexts({ text, imageUrls }) : text;
+      Object.keys(imageUrlsObj).length > 0
+        ? replaceImageTexts({ text, imageUrlsObj })
+        : text;
 
     const parsedResult = await getMetadata({ source: result });
 
