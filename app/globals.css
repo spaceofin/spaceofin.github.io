@@ -80,6 +80,7 @@ body {
   }
   .prose p {
     margin: 0px;
+    /* margin-bottom: 16px; */
   }
   .prose ul li {
     margin: 0px;

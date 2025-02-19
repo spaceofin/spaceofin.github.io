@@ -14,19 +14,19 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
     ),
     h4: ({ children }) => (
       <h4
-        className={`text-xl font-bold dark:text-xl my-2 text-slate-800 dark:text-sky-500`}>
+        className={`text-xl font-bold dark:text-xl mt-4 text-slate-800 dark:text-sky-500`}>
         {children}
       </h4>
     ),
     h5: ({ children }) => (
       <h5
-        className={`text-xl dark:text-xl my-2 text-slate-800 dark:text-sky-500`}>
+        className={`text-lg font-bold dark:text-xl mt-4 text-slate-600 dark:text-sky-500`}>
         {children}
       </h5>
     ),
     h6: ({ children }) => (
       <h6
-        className={`text-xl dark:text-xl my-2  text-slate-700 dark:text-sky-500`}>
+        className={`text-lg font-bold dark:text-xl mt-6 text-slate-600 dark:text-slate-600`}>
         {children}
       </h6>
     ),
