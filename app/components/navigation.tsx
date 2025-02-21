@@ -11,7 +11,7 @@ export default function Navigation() {
           <Link href="/learning-logs">Learning Logs</Link>
         </li>
         <li>
-          <Link href="/commit-logs">Commit logs</Link>
+          <Link href="/commit-logs">Commit Logs</Link>
         </li>
       </ul>
     </nav>
