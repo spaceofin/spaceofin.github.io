@@ -16,7 +16,7 @@ function YearMonthItem({
   const { setSelectedDate } = usePostContext();
   return (
     <li
-      className={`flex justify-center bg-indigo-800 bg-opacity-65 text-xl text-white font-mono rounded-md m-2 ml-0 px-6 gap-0.5 border-2 border-indigo-950 border-opacity-70 hover:cursor-pointer ${className}`}
+      className={`flex w-[110px] justify-center bg-indigo-800 bg-opacity-65 text-xl text-white font-mono rounded-md mx-2 my-1 ml-0 px-6 gap-0.5 border-2 border-indigo-950 border-opacity-70 hover:cursor-pointer ${className}`}
       onClick={() => {
         setSelectedDate(date);
       }}>
@@ -40,8 +40,8 @@ export function DateFilterNav({
   formattedPostDatesList.sort();
 
   return (
-    <nav className="min-w-30 font-thin text-lg mr-6">
-      <ul>
+    <nav className="font-thin text-lg mr-6">
+      <ul className="flex flex-row sm:flex-col">
         <YearMonthItem className={className}>ALL</YearMonthItem>
         {formattedPostDatesList.map((date) => (
           <YearMonthItem key={date} date={date} className={className}>

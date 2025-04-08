@@ -21,7 +21,7 @@ export function PostCard({
   return (
     <Link
       href={url}
-      className="flex flex-col w-full min-w-96 px-10 py-5  rounded-lg bg-white bg-opacity-50 no-underline">
+      className="flex flex-col w-full px-6 sm:px-10 py-5 rounded-lg bg-white bg-opacity-50 no-underline">
       <h3 className="text-lg font-normal my-2 mb-0">{frontmatter.title}</h3>
       <p className="flex justify-end">{frontmatter.created_at}</p>
       <div className="line-clamp-2">{preview}</div>
